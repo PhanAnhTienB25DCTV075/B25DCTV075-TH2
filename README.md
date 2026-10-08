@@ -2,8 +2,8 @@
 ## So Sánh Cách Làm Giao Diện: DOM Thuần (Phần A) vs React (Phần B)
 
 ### 1. Quản lý Giao diện (UI Rendering)
-- **DOM Thuần (Phần A): Thao tác trực tiếp với DOM tree thông qua các phương thức như `document.createElement`, `appendChild`, hay `innerHTML`. Mỗi khi dữ liệu thay đổi, phải tự viết code thủ công để tìm node tương ứng và cập nhật giao diện.
-- **React (Phần B): Xây dựng giao diện theo mô hình khai báo (Declarative) dựa trên Component và Virtual DOM. Giao diện tự động cập nhật và phản chiếu chính xác theo trạng thái (State) của ứng dụng mà không cần can thiệp trực tiếp vào DOM thật.
+- **DOM Thuần (Phần A):**Thao tác trực tiếp với DOM tree thông qua các phương thức như `document.createElement`, `appendChild`, hay `innerHTML`. Mỗi khi dữ liệu thay đổi, phải tự viết code thủ công để tìm node tương ứng và cập nhật giao diện.
+- **React (Phần B):**Xây dựng giao diện theo mô hình khai báo (Declarative) dựa trên Component và Virtual DOM. Giao diện tự động cập nhật và phản chiếu chính xác theo trạng thái (State) của ứng dụng mà không cần can thiệp trực tiếp vào DOM thật.
 
 ### 2. Quản lý Dữ liệu & Luồng dữ liệu (State & Data Flow)
 - **DOM Thuần (Phần A):** Dữ liệu thường lưu ở các biến toàn cục (global variables) hoặc gán trực tiếp vào thuộc tính của phần tử HTML (như `data-id`). Luồng dữ liệu hai chiều/phức tạp dễ gây ra hiện tượng giao diện và dữ liệu không đồng bộ.
