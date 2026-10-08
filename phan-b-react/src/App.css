@@ -34,3 +34,41 @@ body { background-color: #f4f7f6; color: #333; }
     .book-grid { grid-template-columns: 1fr; }
     .header { flex-direction: column; gap: 15px; }
 }
+/* Nút Đổi giao diện */
+.btn-theme {
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    background: #fff;
+    color: #333;
+    transition: 0.3s;
+}
+
+/* Biến CSS Mặc định (Light Mode) */
+:root {
+    --bg-body: #f4f7f6;
+    --text-main: #333;
+    --bg-section: #ffffff;
+    --bg-card: #fafafa;
+    --border-color: #e0e0e0;
+}
+
+/* Cập nhật các màu theo biến */
+body { background-color: var(--bg-body); color: var(--text-main); transition: background-color 0.3s, color 0.3s; }
+.section-container { background: var(--bg-section); }
+.book-card { background: var(--bg-card); border-color: var(--border-color); }
+.section-container h2, .book-card h3 { color: var(--text-main); }
+
+/* Khi body có class dark-mode */
+body.dark-mode {
+    --bg-body: #1a1a1a;
+    --text-main: #f1f1f1;
+    --bg-section: #2a2a2a;
+    --bg-card: #333333;
+    --border-color: #444444;
+}
+body.dark-mode .header { background-color: #000; }
+body.dark-mode .footer { background-color: #000; }
+body.dark-mode .btn-theme { background: #333; color: #fff; border: 1px solid #555; }

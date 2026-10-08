@@ -1,5 +1,4 @@
-import { useState } from 'react';
-// Chú ý: bắt buộc phải có ./ ở đầu để chỉ đường dẫn tương đối
+import { useState, useEffect } from 'react';
 import { booksData } from './data/books'; 
 import Header from './components/Header';
 import Section from './components/Section';
@@ -12,6 +11,9 @@ function App() {
   const [books] = useState(booksData);
   const [favs, setFavs] = useState([]); 
   const [selectedGenre, setSelectedGenre] = useState('All');
+  
+  // Thêm State quản lý chế độ Dark Mode
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const genres = ['All', ...new Set(books.map(b => b.genre))];
 
@@ -23,13 +25,27 @@ function App() {
     );
   };
 
+  // Áp dụng class dark-mode vào thẻ body khi state thay đổi
+  useEffect(() => {
+    if (isDarkMode) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  }, [isDarkMode]);
+
   const filteredBooks = selectedGenre === 'All' 
     ? books 
     : books.filter(b => b.genre === selectedGenre);
 
   return (
     <div className="app-container">
-      <Header favCount={favs.length} />
+      {/* Truyền state và hàm toggle xuống Header */}
+      <Header 
+        favCount={favs.length} 
+        isDarkMode={isDarkMode} 
+        toggleTheme={() => setIsDarkMode(!isDarkMode)} 
+      />
       
       <main className="main-content">
           <Section title="Lọc theo thể loại">
