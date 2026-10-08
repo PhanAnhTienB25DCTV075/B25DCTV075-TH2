@@ -13,5 +13,5 @@
 - **React (Phần B):** Gắn sự kiện trực tiếp trên thẻ JSX (như `onClick`) trong từng Component con (`BookCard`). React tự động quản lý việc lắng nghe và tối ưu sự kiện bên dưới hệ thống (Synthetic Events).
 
 ### 4. Bố cục & Khả năng tái sử dụng (Architecture & Reusability)
-- **DOM Thuần (Phần A):** Tách file theo chức năng module JS (`api.js`, `storage.js`, `main.js`)[cite: 2, 4], nhưng phần giao diện HTML vẫn bị gắn chặt vào file `index.html` hoặc chuỗi khởi tạo bằng JS.
+- **DOM Thuần (Phần A):** Tách file theo chức năng module JS (`api.js`, `storage.js`, `main.js`), nhưng phần giao diện HTML vẫn bị gắn chặt vào file `index.html` hoặc chuỗi khởi tạo bằng JS.
 - **React (Phần B):** Chia nhỏ giao diện thành các thành phần độc lập (`Header`, `Section`, `GenreFilter`, `BookList`, `BookCard`). Sử dụng `children` và `props` giúp mã nguồn dễ đọc, linh hoạt và có khả năng tái sử dụng cao.
