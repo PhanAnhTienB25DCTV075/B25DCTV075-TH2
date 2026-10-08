@@ -1,0 +1,36 @@
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+body { background-color: #f4f7f6; color: #333; }
+
+.header { background-color: #2c3e50; color: white; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+.fav-badge { background: #e74c3c; padding: 8px 15px; border-radius: 20px; font-weight: bold; }
+
+.main-content { max-width: 1200px; margin: 30px auto; padding: 0 20px; display: flex; flex-direction: column; gap: 30px; }
+
+.section-container { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+.section-container h2 { margin-bottom: 20px; color: #2c3e50; border-bottom: 2px solid #4CAF50; display: inline-block; padding-bottom: 5px; }
+
+/* Filter Buttons */
+.genre-filter { display: flex; gap: 10px; flex-wrap: wrap; }
+.btn-genre { padding: 10px 20px; border: 2px solid #4CAF50; background: transparent; color: #4CAF50; border-radius: 25px; cursor: pointer; font-weight: bold; transition: all 0.2s ease; }
+.btn-genre:hover, .btn-genre.active { background: #4CAF50; color: white; }
+
+.status-text { margin-bottom: 15px; font-style: italic; color: #7f8c8d; }
+
+/* Book Grid (3 cột PC, 1 cột Mobile) */
+.book-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.book-card { border: 1px solid #e0e0e0; padding: 20px; border-radius: 10px; display: flex; flex-direction: column; gap: 10px; transition: transform 0.2s, box-shadow 0.2s; background: #fafafa; }
+.book-card:hover { transform: translateY(-5px); box-shadow: 0 6px 12px rgba(0,0,0,0.1); }
+.book-card h3 { color: #2c3e50; font-size: 1.3rem; }
+.card-actions { margin-top: auto; padding-top: 15px; border-top: 1px solid #ddd; }
+
+/* Fav Button */
+.btn-fav { width: 100%; padding: 12px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; background: #f1c40f; color: #333; transition: 0.2s; }
+.btn-fav.active { background: #e74c3c; color: white; }
+
+.footer { text-align: center; padding: 20px; background: #2c3e50; color: white; margin-top: 40px; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .book-grid { grid-template-columns: 1fr; }
+    .header { flex-direction: column; gap: 15px; }
+}
